@@ -1,0 +1,74 @@
+:root {
+  --brand: #5b6cff;
+}
+
+body {
+  background: linear-gradient(180deg, #f8f9ff 0%, #f4f6fb 100%);
+}
+
+.card {
+  border: 0;
+  border-radius: 14px;
+}
+
+.credit-card {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.credit-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.score-pill {
+  font-size: 0.75rem;
+}
+
+.chip {
+  border: 1px solid #dee2e6;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  background: #fff;
+}
+
+.btn-primary {
+  background: var(--brand);
+  border-color: var(--brand);
+}
+
+.explanation-box {
+  background: #f8f9fa;
+  border-left: 3px solid var(--brand);
+  padding: 0.75rem;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+}
+
+.explanation-box ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.badge-best-match {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 600;
+}
+
+.badge-income-warning {
+  background: #ffc107;
+  color: #000;
+}
+
+.card-disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.toast {
+  min-width: 250px;
+}

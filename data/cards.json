@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "name": "Nexa Fácil",
+    "category": "basico",
+    "annualFee": 0,
+    "benefitType": "cashback",
+    "incomeRequired": 1200,
+    "travelBenefits": false,
+    "bestFor": "dia_a_dia"
+  },
+  {
+    "id": 2,
+    "name": "Nexa Rewards",
+    "category": "basico",
+    "annualFee": 90,
+    "benefitType": "pontos",
+    "incomeRequired": 1500,
+    "travelBenefits": false,
+    "bestFor": "online"
+  },
+  {
+    "id": 3,
+    "name": "Atlas Cash",
+    "category": "intermediario",
+    "annualFee": 180,
+    "benefitType": "cashback",
+    "incomeRequired": 3000,
+    "travelBenefits": false,
+    "bestFor": "mercado"
+  },
+  {
+    "id": 4,
+    "name": "Atlas Gold",
+    "category": "intermediario",
+    "annualFee": 240,
+    "benefitType": "pontos",
+    "incomeRequired": 4000,
+    "travelBenefits": false,
+    "bestFor": "dia_a_dia"
+  },
+  {
+    "id": 5,
+    "name": "Atlas Travel",
+    "category": "intermediario",
+    "annualFee": 320,
+    "benefitType": "milhas",
+    "incomeRequired": 4500,
+    "travelBenefits": true,
+    "bestFor": "viagem"
+  },
+  {
+    "id": 6,
+    "name": "Horizon Cashback+",
+    "category": "intermediario",
+    "annualFee": 210,
+    "benefitType": "cashback",
+    "incomeRequired": 3500,
+    "travelBenefits": false,
+    "bestFor": "online"
+  },
+  {
+    "id": 7,
+    "name": "Horizon Points",
+    "category": "intermediario",
+    "annualFee": 260,
+    "benefitType": "pontos",
+    "incomeRequired": 4000,
+    "travelBenefits": false,
+    "bestFor": "dia_a_dia"
+  },
+  {
+    "id": 8,
+    "name": "Pulse Digital",
+    "category": "basico",
+    "annualFee": 0,
+    "benefitType": "cashback",
+    "incomeRequired": 1000,
+    "travelBenefits": false,
+    "bestFor": "online"
+  },
+  {
+    "id": 9,
+    "name": "Pulse Plus",
+    "category": "intermediario",
+    "annualFee": 150,
+    "benefitType": "cashback",
+    "incomeRequired": 2500,
+    "travelBenefits": false,
+    "bestFor": "mercado"
+  },
+  {
+    "id": 10,
+    "name": "Orbit Gold",
+    "category": "intermediario",
+    "annualFee": 290,
+    "benefitType": "pontos",
+    "incomeRequired": 4500,
+    "travelBenefits": false,
+    "bestFor": "online"
+  },
+  {
+    "id": 11,
+    "name": "Orbit Travel",
+    "category": "intermediario",
+    "annualFee": 350,
+    "benefitType": "milhas",
+    "incomeRequired": 5000,
+    "travelBenefits": true,
+    "bestFor": "viagem"
+  },
+  {
+    "id": 12,
+    "name": "Orbit Black",
+    "category": "premium",
+    "annualFee": 1200,
+    "benefitType": "milhas",
+    "incomeRequired": 12000,
+    "travelBenefits": true,
+    "bestFor": "viagem"
+  },
+  {
+    "id": 13,
+    "name": "Aurora Basic",
+    "category": "basico",
+    "annualFee": 0,
+    "benefitType": "pontos",
+    "incomeRequired": 1200,
+    "travelBenefits": false,
+    "bestFor": "dia_a_dia"
+  },
+  {
+    "id": 14,
+    "name": "Aurora Platinum",
+    "category": "intermediario",
+    "annualFee": 300,
+    "benefitType": "pontos",
+    "incomeRequired": 5000,
+    "travelBenefits": false,
+    "bestFor": "online"
+  },
+  {
+    "id": 15,
+    "name": "Aurora Infinite",
+    "category": "premium",
+    "annualFee": 1400,
+    "benefitType": "milhas",
+    "incomeRequired": 15000,
+    "travelBenefits": true,
+    "bestFor": "viagem"
+  },
+  {
+    "id": 16,
+    "name": "Vector Cash",
+    "category": "basico",
+    "annualFee": 0,
+    "benefitType": "cashback",
+    "incomeRequired": 1500,
+    "travelBenefits": false,
+    "bestFor": "dia_a_dia"
+  },
+  {
+    "id": 17,
+    "name": "Vector Gold",
+    "category": "intermediario",
+    "annualFee": 220,
+    "benefitType": "cashback",
+    "incomeRequired": 3500,
+    "travelBenefits": false,
+    "bestFor": "mercado"
+  },
+  {
+    "id": 18,
+    "name": "Vector Platinum",
+    "category": "intermediario",
+    "annualFee": 330,
+    "benefitType": "pontos",
+    "incomeRequired": 5000,
+    "travelBenefits": false,
+    "bestFor": "online"
+  },
+  {
+    "id": 19,
+    "name": "Vector Black",
+    "category": "premium",
+    "annualFee": 1300,
+    "benefitType": "milhas",
+    "incomeRequired": 14000,
+    "travelBenefits": true,
+    "bestFor": "viagem"
+  },
+  {
+    "id": 20,
+    "name": "Prime Cash",
+    "category": "intermediario",
+    "annualFee": 210,
+    "benefitType": "cashback",
+    "incomeRequired": 4000,
+    "travelBenefits": false,
+    "bestFor": "mercado"
+  },
+  {
+    "id": 21,
+    "name": "Prime Rewards",
+    "category": "intermediario",
+    "annualFee": 260,
+    "benefitType": "pontos",
+    "incomeRequired": 4500,
+    "travelBenefits": false,
+    "bestFor": "online"
+  },
+  {
+    "id": 22,
+    "name": "Prime Travel",
+    "category": "intermediario",
+    "annualFee": 360,
+    "benefitType": "milhas",
+    "incomeRequired": 5000,
+    "travelBenefits": true,
+    "bestFor": "viagem"
+  },
+  {
+    "id": 23,
+    "name": "Titan Black",
+    "category": "premium",
+    "annualFee": 1500,
+    "benefitType": "milhas",
+    "incomeRequired": 16000,
+    "travelBenefits": true,
+    "bestFor": "viagem"
+  },
+  {
+    "id": 24,
+    "name": "Titan Cashback+",
+    "category": "premium",
+    "annualFee": 900,
+    "benefitType": "cashback",
+    "incomeRequired": 12000,
+    "travelBenefits": true,
+    "bestFor": "dia_a_dia"
+  },
+  {
+    "id": 25,
+    "name": "Nova Basic",
+    "category": "basico",
+    "annualFee": 0,
+    "benefitType": "cashback",
+    "incomeRequired": 1000,
+    "travelBenefits": false,
+    "bestFor": "mercado"
+  },
+  {
+    "id": 26,
+    "name": "Nova Rewards",
+    "category": "basico",
+    "annualFee": 120,
+    "benefitType": "pontos",
+    "incomeRequired": 1800,
+    "travelBenefits": false,
+    "bestFor": "online"
+  },
+  {
+    "id": 27,
+    "name": "Nova Travel",
+    "category": "intermediario",
+    "annualFee": 340,
+    "benefitType": "milhas",
+    "incomeRequired": 4200,
+    "travelBenefits": true,
+    "bestFor": "viagem"
+  },
+  {
+    "id": 28,
+    "name": "Zen Cashback",
+    "category": "intermediario",
+    "annualFee": 200,
+    "benefitType": "cashback",
+    "incomeRequired": 3500,
+    "travelBenefits": false,
+    "bestFor": "dia_a_dia"
+  },
+  {
+    "id": 29,
+    "name": "Zen Points",
+    "category": "intermediario",
+    "annualFee": 260,
+    "benefitType": "pontos",
+    "incomeRequired": 4200,
+    "travelBenefits": false,
+    "bestFor": "online"
+  },
+  {
+    "id": 30,
+    "name": "Zen Infinite",
+    "category": "premium",
+    "annualFee": 1350,
+    "benefitType": "milhas",
+    "incomeRequired": 14000,
+    "travelBenefits": true,
+    "bestFor": "viagem"
+  }
+]

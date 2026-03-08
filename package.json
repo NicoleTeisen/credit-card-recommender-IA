@@ -1,0 +1,12 @@
+{
+  "name": "credit-card-recommender",
+  "version": "1.0.0",
+  "description": "Sistema de recomendação de cartões de crédito com TensorFlow.js",
+  "type": "module",
+  "scripts": {
+    "start": "browser-sync -w . --server --files 'index.html, style.css, data/*.json, src/**/*.js, src/view/templates/*.html' --port 3000"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.4"
+  }
+}
