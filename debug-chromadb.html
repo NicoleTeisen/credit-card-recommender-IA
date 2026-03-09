@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChromaDB Debug - Visualizar Dados</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 20px;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        color: #667eea;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .status {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #ccc;
+      }
+
+      .status.connected {
+        background: #10b981;
+        box-shadow: 0 0 10px #10b981;
+      }
+
+      .info {
+        background: #f3f4f6;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 20px 0;
+      }
+
+      .info-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .info-row:last-child {
+        border-bottom: none;
+      }
+
+      .info-label {
+        font-weight: 600;
+        color: #6b7280;
+      }
+
+      .info-value {
+        color: #111827;
+        font-family: monospace;
+      }
+
+      .section {
+        margin: 30px 0;
+      }
+
+      .section-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #374151;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #e5e7eb;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      button {
+        background: #667eea;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s;
+      }
+
+      button:hover {
+        background: #5568d3;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+      }
+
+      button:disabled {
+        background: #9ca3af;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+        font-size: 14px;
+      }
+
+      .data-table th {
+        background: #f9fafb;
+        padding: 12px;
+        text-align: left;
+        font-weight: 600;
+        color: #374151;
+        border-bottom: 2px solid #e5e7eb;
+      }
+
+      .data-table td {
+        padding: 10px 12px;
+        border-bottom: 1px solid #f3f4f6;
+      }
+
+      .data-table tr:hover {
+        background: #f9fafb;
+      }
+
+      .vector-preview {
+        font-family: monospace;
+        font-size: 11px;
+        color: #6b7280;
+        max-width: 300px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .badge.user {
+        background: #dbeafe;
+        color: #1e40af;
+      }
+
+      .badge.card {
+        background: #fce7f3;
+        color: #be185d;
+      }
+
+      .error {
+        background: #fee2e2;
+        color: #991b1b;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 15px 0;
+        border-left: 4px solid #dc2626;
+      }
+
+      .success {
+        background: #d1fae5;
+        color: #065f46;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 15px 0;
+        border-left: 4px solid #10b981;
+      }
+
+      .loading {
+        text-align: center;
+        padding: 40px;
+        color: #6b7280;
+      }
+
+      .spinner {
+        border: 3px solid #f3f4f6;
+        border-top: 3px solid #667eea;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 15px;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        <span class="status" id="status"></span>
+        ChromaDB Debug
+      </h1>
+      <p style="color: #6b7280; margin-bottom: 20px">
+        Visualize os embeddings salvos no ChromaDB
+      </p>
+
+      <div class="info" id="info">
+        <div class="info-row">
+          <span class="info-label">ChromaDB URL:</span>
+          <span class="info-value">http://localhost:8002 (bridge)</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Collection:</span>
+          <span class="info-value">credit_card_embeddings</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Total Embeddings:</span>
+          <span class="info-value" id="total-count">-</span>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button onclick="loadData()">🔄 Atualizar Dados</button>
+        <button onclick="showUsers()">👤 Ver Usuários</button>
+        <button onclick="showCards()">💳 Ver Cartões</button>
+        <button onclick="showAll()">📋 Ver Todos</button>
+      </div>
+
+      <div id="result"></div>
+    </div>
+
+    <script>
+      const baseURL = "http://localhost:8002";
+
+      async function checkConnection() {
+        try {
+          console.log("Tentando conectar ao ChromaDB Bridge...");
+          const response = await fetch(`${baseURL}/health`);
+          console.log("Response:", response);
+          if (response.ok) {
+            document.getElementById("status").classList.add("connected");
+            console.log("✅ ChromaDB conectado!");
+            return true;
+          }
+        } catch (error) {
+          console.error("❌ Connection error:", error);
+          document.getElementById("result").innerHTML = `
+          <div class="error">
+            <strong>Erro de conexão:</strong><br>
+            ${error.message}<br><br>
+            <strong>Detalhes:</strong> ${error.stack || "N/A"}
+          </div>
+        `;
+        }
+        return false;
+      }
+
+      async function getCount() {
+        try {
+          const response = await fetch(`${baseURL}/count`);
+          if (response.status === 404) {
+            document.getElementById("total-count").textContent =
+              "Collection não existe";
+            return 0;
+          }
+          if (response.ok) {
+            const count = await response.json();
+            document.getElementById("total-count").textContent = count;
+            return count;
+          }
+        } catch (error) {
+          console.error("Count error:", error);
+        }
+        document.getElementById("total-count").textContent = "0";
+        return 0;
+      }
+
+      async function getAllData(typeFilter = null) {
+        try {
+          showLoading();
+
+          const response = await fetch(`${baseURL}/list`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(typeFilter ? { type: typeFilter } : {}),
+          });
+
+          if (response.status === 404) {
+            showError(
+              '❌ Collection "credit_card_embeddings" não existe!<br><br>💡 <strong>Para criar dados:</strong><br>1. Acesse a aplicação principal<br>2. Selecione um usuário<br>3. Clique em "Treinar Modelo"<br>4. Aguarde o treinamento terminar<br>5. Volte aqui e clique em "🔄 Atualizar Dados"',
+            );
+            return;
+          }
+
+          if (!response.ok) {
+            throw new Error("Failed to fetch data");
+          }
+
+          const data = await response.json();
+          displayData(data, typeFilter);
+        } catch (error) {
+          showError("Erro ao buscar dados: " + error.message);
+        }
+      }
+
+      function displayData(data, typeFilter) {
+        const result = document.getElementById("result");
+
+        if (!data.ids || data.ids.length === 0) {
+          result.innerHTML = `
+          <div class="error">
+            Nenhum embedding encontrado${typeFilter ? ` para tipo "${typeFilter}"` : ""}.
+            Treine o modelo primeiro!
+          </div>
+        `;
+          return;
+        }
+
+        const filterText = typeFilter ? ` (${typeFilter})` : "";
+
+        let html = `
+        <div class="section">
+          <div class="section-title">Embeddings Salvos${filterText} (${data.ids.length})</div>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Tipo</th>
+                <th>ID Original</th>
+                <th>Dimensões</th>
+                <th>Preview do Vetor</th>
+              </tr>
+            </thead>
+            <tbody>
+      `;
+
+        for (let i = 0; i < data.ids.length; i++) {
+          const id = data.ids[i];
+          const metadata = data.metadatas[i];
+          const embedding = data.embeddings[i];
+          const type = metadata.type;
+          const originalId = metadata.originalId;
+
+          const vectorPreview =
+            embedding
+              .slice(0, 5)
+              .map((v) => v.toFixed(4))
+              .join(", ") + "...";
+
+          html += `
+          <tr>
+            <td><code>${id}</code></td>
+            <td><span class="badge ${type}">${type}</span></td>
+            <td>${originalId}</td>
+            <td>${embedding.length}</td>
+            <td class="vector-preview">[${vectorPreview}]</td>
+          </tr>
+        `;
+        }
+
+        html += `
+            </tbody>
+          </table>
+        </div>
+      `;
+
+        result.innerHTML = html;
+      }
+
+      function showLoading() {
+        document.getElementById("result").innerHTML = `
+        <div class="loading">
+          <div class="spinner"></div>
+          <p>Carregando dados do ChromaDB...</p>
+        </div>
+      `;
+      }
+
+      function showError(message) {
+        document.getElementById("result").innerHTML = `
+        <div class="error">${message}</div>
+      `;
+      }
+
+      async function loadData() {
+        await getCount();
+        await getAllData();
+      }
+
+      async function showUsers() {
+        await getAllData("user");
+      }
+
+      async function showCards() {
+        await getAllData("card");
+      }
+
+      async function showAll() {
+        await getAllData();
+      }
+
+      // Inicializar
+      (async () => {
+        const connected = await checkConnection();
+        if (connected) {
+          await loadData();
+        } else {
+          showError(
+            '❌ ChromaDB não está acessível. Certifique-se que o Docker está rodando com "docker compose up -d"',
+          );
+        }
+      })();
+    </script>
+  </body>
+</html>

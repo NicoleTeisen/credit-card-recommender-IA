@@ -19,6 +19,7 @@ export class Events {
   onModelProgressUpdate(callback) { this.#on(events.modelProgressUpdate, callback); }
   onRecommendationsReady(callback) { this.#on(events.recommendationsReady, callback); }
   onRecommend(callback) { this.#on(events.recommend, callback); }
+  onEmbeddingsReady(callback) { this.#on(events.embeddingsReady, callback); }
 
   dispatchUserSelected(user) { this.#dispatch(events.userSelected, user); }
   dispatchUsersUpdated(users) { this.#dispatch(events.usersUpdated, users); }
@@ -28,4 +29,5 @@ export class Events {
   dispatchModelProgressUpdate(payload) { this.#dispatch(events.modelProgressUpdate, payload); }
   dispatchRecommendationsReady(payload) { this.#dispatch(events.recommendationsReady, payload); }
   dispatchRecommend(user) { this.#dispatch(events.recommend, user); }
+  dispatchEmbeddingsReady(payload) { this.#dispatch(events.embeddingsReady, payload); }
 }

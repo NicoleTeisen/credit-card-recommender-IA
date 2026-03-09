@@ -1,14 +1,35 @@
 # 🎯 Recomendador de Cartões de Crédito com IA
 
-Sistema de recomendação inteligente usando TensorFlow.js, arquitetura MVC e Web Workers.
+Sistema de recomendação inteligente usando TensorFlow.js, arquitetura MVC, Web Workers e **ChromaDB** (Vector Database).
 
 ## 🚀 Funcionalidades Implementadas
 
 ### ✅ Core Features
 - **Machine Learning com TensorFlow.js** - Rede neural treinada em tempo real
+- **ChromaDB Vector Database** - Banco de dados vetorial real para busca por similaridade
 - **Arquitetura MVC** - Separação clara de responsabilidades
 - **Web Workers** - Treinamento assíncrono sem travar a UI
 - **Sistema de Eventos** - Event-driven architecture com CustomEvents
+
+### 🔬 Vector Database & Embeddings
+
+#### Como Funciona
+1. **Treinamento da Rede Neural** - Modelo aprende padrões de compatibilidade
+2. **Extração de Embeddings** - Camada penúltima (32 dimensões) representa features abstratas
+3. **Armazenamento no ChromaDB** - Vector database real com índices otimizados
+4. **Busca por Similaridade** - ChromaDB usa algoritmos ANN (Approximate Nearest Neighbor) para busca rápida
+
+#### Arquitetura do Vector DB
+- **ChromaDB** - Vector database profissional rodando em Docker
+- **API REST** - Comunicação via fetch do browser
+- **Cosine Similarity** - Métrica de distância entre vetores
+- **Persistent Storage** - Dados salvos em volume Docker
+
+#### Por que ChromaDB?
+- ✅ **Vector DB Real** - Não é simulação, usa índices otimizados
+- ✅ **Performance** - Busca aproximada (ANN) muito mais rápida que busca linear
+- ✅ **Popular em ML** - Usado com LangChain, embeddings de LLMs
+- ✅ **Fácil Setup** - Docker Compose e pronto
 
 ### ✨ Melhorias Implementadas
 
@@ -24,6 +45,7 @@ Sistema de recomendação inteligente usando TensorFlow.js, arquitetura MVC e We
 #### 2. **Filtros Inteligentes**
 - Filtro por categoria (básico, intermediário, premium)
 - Filtro por tipo de benefício (cashback, pontos, milhas)
+- Controle de threshold de compatibilidade (0-100%)
 - Filtragem em tempo real sem retreinar modelo
 
 #### 3. **Badges Visuais**
@@ -44,14 +66,43 @@ Sistema de recomendação inteligente usando TensorFlow.js, arquitetura MVC e We
 
 ## 📦 Instalação e Execução
 
+### Pré-requisitos
+- Node.js 16+
+- Docker Desktop
+
+### Passo 1: Instalar dependências
 ```bash
-# Instalar dependências
 npm install
+```
 
-# Iniciar servidor de desenvolvimento
+### Passo 2: Iniciar ChromaDB
+```bash
+docker-compose up -d
+```
+
+Isso vai:
+- Baixar a imagem do ChromaDB
+- Criar um container rodando na porta 8000
+- Dados persistidos em volume Docker
+
+Verificar se está rodando:
+```bash
+curl http://localhost:8000/api/v1/heartbeat
+# Deve retornar um timestamp
+```
+
+### Passo 3: Iniciar aplicação
+```bash
 npm start
+```
 
-# Acessar em http://localhost:3000
+Acesse: **http://localhost:3000**
+
+### Parar ChromaDB
+```bash
+docker-compose down
+# Ou para remover dados também:
+docker-compose down -v
 ```
 
 ## 🏗️ Estrutura do Projeto

@@ -8,6 +8,7 @@ const workerEvents = {
   recommend: 'recommend',
   trainingLog: 'training:log',
   progressUpdate: 'progress:update',
+  embeddingsExtracted: 'embeddings:extracted',
 };
 
 console.log('[Worker] Loaded successfully. TensorFlow.js version:', typeof tf !== 'undefined' ? tf.version.tfjs : 'NOT LOADED');
@@ -181,9 +182,187 @@ async function configureNeuralNetAndTrain(trainData) {
   return model;
 }
 
-function recommend({ user }) {
+function extractEmbeddings(ctx, model) {
+  console.log('[Worker] Extracting embeddings...');
+  
+  // Extract embeddings by applying layers manually
+  const layer1 = model.getLayer(null, 0); // Dense 128
+  const layer2 = model.getLayer(null, 1); // Dropout
+  const layer3 = model.getLayer(null, 2); // Dense 64
+  const layer4 = model.getLayer(null, 3); // Dense 32 - this is what we want
+  
+  // Extract user embeddings
+  const userEmbeddings = ctx.users.map((user) => {
+    const userVector = encodeUser(user, ctx);
+    const neutralCard = new Array(getCardVectorSize(ctx)).fill(0);
+    const input = [...userVector, ...neutralCard];
+    
+    return tf.tidy(() => {
+      let x = tf.tensor2d([input]);
+      x = layer1.apply(x);
+      x = layer2.apply(x);
+      x = layer3.apply(x);
+      x = layer4.apply(x);
+      const vector = Array.from(x.dataSync());
+      
+      return {
+        id: user.id,
+        vector,
+      };
+    });
+  });
+
+  // Extract card embeddings
+  const cardEmbeddings = ctx.cards.map((card) => {
+    const neutralUserSize = 4 + ctx.rewardSize + ctx.spendSize + getCardVectorSize(ctx);
+    const neutralUser = new Array(neutralUserSize).fill(0);
+    const cardVector = encodeCard(card, ctx);
+    const input = [...neutralUser, ...cardVector];
+    
+    return tf.tidy(() => {
+      let x = tf.tensor2d([input]);
+      x = layer1.apply(x);
+      x = layer2.apply(x);
+      x = layer3.apply(x);
+      x = layer4.apply(x);
+      const vector = Array.from(x.dataSync());
+      
+      return {
+        id: card.id,
+        vector,
+      };
+    });
+  });
+
+  console.log(`[Worker] Extracted ${userEmbeddings.length} user embeddings and ${cardEmbeddings.length} card embeddings`);
+  
+  return { userEmbeddings, cardEmbeddings };
+}
+
+async function recommend({ user }) {
   if (!_model || !_context || !user) return;
 
+  console.log('[Worker] Generating recommendations using ChromaDB vector search...');
+  
+  try {
+    // 1. Buscar embedding do usuário no ChromaDB
+    const userEmbeddingResponse = await fetch('http://localhost:8002/get', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        ids: [`user_${user.id}`]
+      })
+    });
+    
+    if (!userEmbeddingResponse.ok) {
+      console.warn('[Worker] User embedding not found in ChromaDB, using model prediction');
+      return recommendUsingModel({ user });
+    }
+    
+    const userEmbeddingData = await userEmbeddingResponse.json();
+    
+    if (!userEmbeddingData.embeddings || userEmbeddingData.embeddings.length === 0) {
+      console.warn('[Worker] No embeddings found, using model prediction');
+      return recommendUsingModel({ user });
+    }
+    
+    const userEmbedding = userEmbeddingData.embeddings[0];
+    
+    // 2. Buscar cartões similares usando busca vetorial
+    const similarCardsResponse = await fetch('http://localhost:8002/query', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        queryVector: userEmbedding,
+        topK: 20, // Buscar mais para filtrar depois
+        where: { type: 'card' }
+      })
+    });
+    
+    if (!similarCardsResponse.ok) {
+      console.warn('[Worker] Vector search failed, using model prediction');
+      return recommendUsingModel({ user });
+    }
+    
+    const similarCardsData = await similarCardsResponse.json();
+    
+    if (!similarCardsData.ids || !similarCardsData.ids[0]) {
+      console.warn('[Worker] No similar cards found, using model prediction');
+      return recommendUsingModel({ user });
+    }
+    
+    console.log(`[Worker] ✅ Found ${similarCardsData.ids[0].length} similar cards from ChromaDB`);
+    
+    // 3. Mapear IDs para objetos de cartão e calcular score
+    const ownedIds = new Set((user.cards || []).map((c) => c.id));
+    const recommendations = similarCardsData.ids[0]
+      .map((_, index) => {
+        const originalId = similarCardsData.metadatas[0][index].originalId;
+        const card = _context.cards.find((c) => c.id === Number.parseInt(originalId, 10));
+        
+        if (!card || ownedIds.has(card.id)) return null;
+        
+        const similarity = 1 - similarCardsData.distances[0][index];
+        const reasons = [];
+        
+        // Explain based on reward preference match
+        if (card.benefitType === user.rewardPreference) {
+          reasons.push(`Benefício ${card.benefitType} combina com sua preferência`);
+        }
+        
+        // Explain based on travel profile
+        if (card.travelBenefits && (user.travelProfile === 'muito' || user.travelProfile === 'as_vezes')) {
+          reasons.push('Oferece benefícios de viagem que você aproveita');
+        }
+        
+        // Explain based on annual fee tolerance
+        if (card.annualFee === 0 && user.annualFeeTolerance === 'baixa') {
+          reasons.push('Sem anuidade - ideal para seu perfil');
+        } else if (card.annualFee > 500 && user.annualFeeTolerance === 'alta') {
+          reasons.push('Taxa anual premium com benefícios exclusivos');
+        }
+        
+        // Explain based on spending category
+        if (card.bestFor === user.mainSpendCategory) {
+          reasons.push(`Otimizado para gastos em ${user.mainSpendCategory}`);
+        }
+        
+        // Income compatibility
+        const incomeCompatible = user.income >= card.incomeRequired;
+        if (!incomeCompatible) {
+          reasons.push('⚠️ Renda mínima pode ser um desafio');
+        }
+        
+        return {
+          ...card,
+          score: similarity,
+          reasons: reasons.length > 0 ? reasons : ['Alta compatibilidade vetorial com seu perfil'],
+          incomeCompatible,
+        };
+      })
+      .filter(Boolean)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 10);
+    
+    console.log(`[Worker] ✅ Returning ${recommendations.length} recommendations (vector-based)`);
+    
+    postMessage({
+      type: workerEvents.recommend,
+      user,
+      recommendations,
+    });
+  } catch (error) {
+    console.error('[Worker] Error in vector-based recommendation:', error);
+    console.log('[Worker] Falling back to model prediction');
+    recommendUsingModel({ user });
+  }
+}
+
+function recommendUsingModel({ user }) {
+  if (!_model || !_context || !user) return;
+
+  console.log('[Worker] Using neural network prediction...');
+  
   const userVector = encodeUser(user, _context);
   const inputs = _context.cards.map((card) => [...userVector, ...encodeCard(card, _context)]);
   const inputTensor = tf.tensor2d(inputs);
@@ -249,16 +428,31 @@ async function trainModel({ users, cards }) {
   try {
     postMessage({ type: workerEvents.trainingStarted, message: 'Inicializando IA...' });
 
+    // Dispose old model
     if (_model) {
       _model.dispose();
       _model = null;
     }
+    
+    // No longer need separate _embeddingModel disposal
 
     _context = buildContext(users, cards);
     const trainData = createTrainingData(_context);
     _model = await configureNeuralNetAndTrain(trainData);
     trainData.xs.dispose();
     trainData.ys.dispose();
+
+    console.log('[Worker] Training complete, extracting embeddings...');
+    
+    // Extract embeddings for all users and cards
+    const { userEmbeddings, cardEmbeddings } = extractEmbeddings(_context, _model);
+    
+    // Send embeddings to main thread for storage
+    postMessage({
+      type: workerEvents.embeddingsExtracted,
+      userEmbeddings,
+      cardEmbeddings,
+    });
 
     postMessage({ type: workerEvents.trainingComplete });
   } catch (error) {

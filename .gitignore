@@ -39,3 +39,8 @@ build/
 # Temporary files
 *.tmp
 .temp/
+# ChromaDB data
+chroma-data/
+
+# Test files
+test-*.html

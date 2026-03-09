@@ -1,258 +1,526 @@
 [
   {
     "id": 1,
-    "name": "Ana Lima",
-    "age": 25,
-    "income": 3500,
-    "monthlySpend": 2200,
-    "travelProfile": "nunca",
+    "name": "Isabela Duarte",
+    "age": 23,
+    "income": 7814,
+    "monthlySpend": 5428,
+    "travelProfile": "as_vezes",
     "rewardPreference": "cashback",
-    "annualFeeTolerance": "baixa",
+    "annualFeeTolerance": "media",
     "creditProfile": "medio",
-    "mainSpendCategory": "dia_a_dia",
+    "mainSpendCategory": "mercado",
     "cards": [
       {
-        "id": 1,
-        "name": "Nexa Fácil"
+        "id": 41,
+        "name": "Elite Digital"
       },
       {
-        "id": 9,
-        "name": "Pulse Plus"
+        "id": 36,
+        "name": "Aurora Pro"
       }
     ]
   },
   {
     "id": 2,
-    "name": "Bruno Ferreira",
-    "age": 27,
-    "income": 12000,
-    "monthlySpend": 7000,
+    "name": "Tatiane Almeida",
+    "age": 34,
+    "income": 2985,
+    "monthlySpend": 1330,
     "travelProfile": "muito",
-    "rewardPreference": "milhas",
-    "annualFeeTolerance": "alta",
-    "creditProfile": "alto",
-    "mainSpendCategory": "viagem",
+    "rewardPreference": "cashback",
+    "annualFeeTolerance": "baixa",
+    "creditProfile": "baixo",
+    "mainSpendCategory": "mercado",
     "cards": [
       {
-        "id": 12,
-        "name": "Orbit Black"
-      },
-      {
-        "id": 23,
-        "name": "Titan Black"
+        "id": 36,
+        "name": "Aurora Pro"
       }
     ]
   },
   {
     "id": 3,
-    "name": "Camila Souza",
-    "age": 30,
-    "income": 5200,
-    "monthlySpend": 3100,
+    "name": "Karina Carvalho",
+    "age": 52,
+    "income": 10626,
+    "monthlySpend": 7047,
     "travelProfile": "as_vezes",
-    "rewardPreference": "pontos",
-    "annualFeeTolerance": "media",
-    "creditProfile": "medio",
-    "mainSpendCategory": "online",
-    "cards": [
-      {
-        "id": 7,
-        "name": "Horizon Points"
-      },
-      {
-        "id": 14,
-        "name": "Aurora Platinum"
-      }
-    ]
+    "rewardPreference": "cashback",
+    "annualFeeTolerance": "alta",
+    "creditProfile": "alto",
+    "mainSpendCategory": "mercado",
+    "cards": []
   },
   {
     "id": 4,
-    "name": "Diego Almeida",
-    "age": 22,
-    "income": 2200,
-    "monthlySpend": 1500,
-    "travelProfile": "nunca",
+    "name": "Daniela Almeida",
+    "age": 40,
+    "income": 15866,
+    "monthlySpend": 7881,
+    "travelProfile": "as_vezes",
     "rewardPreference": "cashback",
-    "annualFeeTolerance": "baixa",
-    "creditProfile": "medio",
-    "mainSpendCategory": "online",
+    "annualFeeTolerance": "alta",
+    "creditProfile": "alto",
+    "mainSpendCategory": "mercado",
     "cards": [
       {
-        "id": 8,
-        "name": "Pulse Digital"
+        "id": 46,
+        "name": "Eclipse Max"
+      },
+      {
+        "id": 27,
+        "name": "Eclipse Gold"
       }
     ]
   },
   {
     "id": 5,
-    "name": "Eduarda Nunes",
-    "age": 28,
-    "income": 7500,
-    "monthlySpend": 4200,
-    "travelProfile": "as_vezes",
-    "rewardPreference": "milhas",
-    "annualFeeTolerance": "media",
+    "name": "Amanda Souza",
+    "age": 37,
+    "income": 15716,
+    "monthlySpend": 8152,
+    "travelProfile": "nunca",
+    "rewardPreference": "cashback",
+    "annualFeeTolerance": "alta",
     "creditProfile": "alto",
-    "mainSpendCategory": "viagem",
-    "cards": [
-      {
-        "id": 5,
-        "name": "Atlas Travel"
-      },
-      {
-        "id": 11,
-        "name": "Orbit Travel"
-      }
-    ]
+    "mainSpendCategory": "online",
+    "cards": []
   },
   {
     "id": 6,
-    "name": "Felipe Costa",
-    "age": 33,
-    "income": 9000,
-    "monthlySpend": 5000,
-    "travelProfile": "as_vezes",
+    "name": "Olivia Gomes",
+    "age": 21,
+    "income": 8814,
+    "monthlySpend": 5832,
+    "travelProfile": "muito",
     "rewardPreference": "pontos",
     "annualFeeTolerance": "media",
-    "creditProfile": "alto",
-    "mainSpendCategory": "online",
+    "creditProfile": "medio",
+    "mainSpendCategory": "mercado",
     "cards": [
       {
-        "id": 10,
-        "name": "Orbit Gold"
-      },
-      {
-        "id": 18,
-        "name": "Vector Platinum"
+        "id": 37,
+        "name": "Quantum Cash"
       }
     ]
   },
   {
     "id": 7,
-    "name": "Gabriela Martins",
-    "age": 24,
-    "income": 2800,
-    "monthlySpend": 1900,
-    "travelProfile": "nunca",
-    "rewardPreference": "cashback",
+    "name": "Gabriela Lima",
+    "age": 49,
+    "income": 2010,
+    "monthlySpend": 668,
+    "travelProfile": "as_vezes",
+    "rewardPreference": "pontos",
     "annualFeeTolerance": "baixa",
-    "creditProfile": "medio",
-    "mainSpendCategory": "mercado",
+    "creditProfile": "baixo",
+    "mainSpendCategory": "online",
     "cards": [
       {
-        "id": 25,
-        "name": "Nova Basic"
-      },
-      {
-        "id": 3,
-        "name": "Atlas Cash"
+        "id": 15,
+        "name": "Phoenix Ultra"
       }
     ]
   },
   {
     "id": 8,
-    "name": "Henrique Lopes",
-    "age": 35,
-    "income": 15000,
-    "monthlySpend": 9000,
-    "travelProfile": "muito",
-    "rewardPreference": "milhas",
-    "annualFeeTolerance": "alta",
-    "creditProfile": "alto",
+    "name": "Ana Oliveira",
+    "age": 45,
+    "income": 9570,
+    "monthlySpend": 3342,
+    "travelProfile": "nunca",
+    "rewardPreference": "pontos",
+    "annualFeeTolerance": "media",
+    "creditProfile": "medio",
     "mainSpendCategory": "viagem",
     "cards": [
       {
-        "id": 15,
-        "name": "Aurora Infinite"
+        "id": 36,
+        "name": "Aurora Pro"
       },
       {
-        "id": 19,
-        "name": "Vector Black"
+        "id": 45,
+        "name": "Aurora Edge"
       }
     ]
   },
   {
     "id": 9,
-    "name": "Isabela Rocha",
-    "age": 29,
-    "income": 6400,
-    "monthlySpend": 3800,
-    "travelProfile": "as_vezes",
-    "rewardPreference": "cashback",
+    "name": "Rafael Lima",
+    "age": 48,
+    "income": 5763,
+    "monthlySpend": 1961,
+    "travelProfile": "nunca",
+    "rewardPreference": "pontos",
     "annualFeeTolerance": "media",
     "creditProfile": "medio",
-    "mainSpendCategory": "mercado",
+    "mainSpendCategory": "dia_a_dia",
     "cards": [
       {
-        "id": 20,
-        "name": "Prime Cash"
+        "id": 37,
+        "name": "Quantum Cash"
       },
       {
-        "id": 28,
-        "name": "Zen Cashback"
+        "id": 7,
+        "name": "Nexa Rewards"
       }
     ]
   },
   {
     "id": 10,
-    "name": "João Pedro",
-    "age": 26,
-    "income": 4100,
-    "monthlySpend": 2600,
+    "name": "Paulo Duarte",
+    "age": 44,
+    "income": 7470,
+    "monthlySpend": 2664,
     "travelProfile": "nunca",
     "rewardPreference": "pontos",
     "annualFeeTolerance": "media",
     "creditProfile": "medio",
-    "mainSpendCategory": "online",
+    "mainSpendCategory": "dia_a_dia",
     "cards": [
       {
-        "id": 21,
-        "name": "Prime Rewards"
+        "id": 9,
+        "name": "Infinity Plus"
       }
     ]
   },
   {
     "id": 11,
-    "name": "Karina Freitas",
-    "age": 31,
-    "income": 8200,
-    "monthlySpend": 4600,
-    "travelProfile": "as_vezes",
+    "name": "Tatiane Moura",
+    "age": 42,
+    "income": 8873,
+    "monthlySpend": 5077,
+    "travelProfile": "muito",
+    "rewardPreference": "pontos",
+    "annualFeeTolerance": "media",
+    "creditProfile": "medio",
+    "mainSpendCategory": "viagem",
+    "cards": []
+  },
+  {
+    "id": 12,
+    "name": "Isabela Santos",
+    "age": 41,
+    "income": 7740,
+    "monthlySpend": 4587,
+    "travelProfile": "nunca",
     "rewardPreference": "milhas",
     "annualFeeTolerance": "media",
+    "creditProfile": "medio",
+    "mainSpendCategory": "mercado",
+    "cards": []
+  },
+  {
+    "id": 13,
+    "name": "Lucas Tavares",
+    "age": 34,
+    "income": 18180,
+    "monthlySpend": 8083,
+    "travelProfile": "as_vezes",
+    "rewardPreference": "cashback",
+    "annualFeeTolerance": "alta",
     "creditProfile": "alto",
-    "mainSpendCategory": "viagem",
+    "mainSpendCategory": "online",
     "cards": [
       {
-        "id": 22,
-        "name": "Prime Travel"
+        "id": 16,
+        "name": "Cosmic Plus"
+      },
+      {
+        "id": 18,
+        "name": "Nexa Cash"
       }
     ]
   },
   {
-    "id": 12,
-    "name": "Lucas Ribeiro",
-    "age": 34,
-    "income": 11000,
-    "monthlySpend": 6200,
+    "id": 14,
+    "name": "Gabriela Andrade",
+    "age": 58,
+    "income": 2335,
+    "monthlySpend": 1217,
     "travelProfile": "muito",
+    "rewardPreference": "cashback",
+    "annualFeeTolerance": "baixa",
+    "creditProfile": "baixo",
+    "mainSpendCategory": "mercado",
+    "cards": [
+      {
+        "id": 42,
+        "name": "Cosmic Gold"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Nicolas Carvalho",
+    "age": 28,
+    "income": 14816,
+    "monthlySpend": 7615,
+    "travelProfile": "muito",
+    "rewardPreference": "milhas",
+    "annualFeeTolerance": "alta",
+    "creditProfile": "alto",
+    "mainSpendCategory": "mercado",
+    "cards": []
+  },
+  {
+    "id": 16,
+    "name": "Carlos Duarte",
+    "age": 27,
+    "income": 19255,
+    "monthlySpend": 9278,
+    "travelProfile": "as_vezes",
+    "rewardPreference": "milhas",
+    "annualFeeTolerance": "alta",
+    "creditProfile": "alto",
+    "mainSpendCategory": "online",
+    "cards": []
+  },
+  {
+    "id": 17,
+    "name": "Felipe Pereira",
+    "age": 37,
+    "income": 6764,
+    "monthlySpend": 2153,
+    "travelProfile": "nunca",
+    "rewardPreference": "pontos",
+    "annualFeeTolerance": "media",
+    "creditProfile": "medio",
+    "mainSpendCategory": "viagem",
+    "cards": [
+      {
+        "id": 41,
+        "name": "Elite Digital"
+      },
+      {
+        "id": 34,
+        "name": "Vortex Rewards"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Karina Andrade",
+    "age": 52,
+    "income": 4309,
+    "monthlySpend": 1729,
+    "travelProfile": "nunca",
+    "rewardPreference": "pontos",
+    "annualFeeTolerance": "baixa",
+    "creditProfile": "medio",
+    "mainSpendCategory": "viagem",
+    "cards": []
+  },
+  {
+    "id": 19,
+    "name": "Henrique Freitas",
+    "age": 42,
+    "income": 4480,
+    "monthlySpend": 2584,
+    "travelProfile": "muito",
+    "rewardPreference": "cashback",
+    "annualFeeTolerance": "baixa",
+    "creditProfile": "medio",
+    "mainSpendCategory": "online",
+    "cards": [
+      {
+        "id": 1,
+        "name": "Horizon Max"
+      },
+      {
+        "id": 11,
+        "name": "Nexa Gold"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Amanda Moura",
+    "age": 51,
+    "income": 2672,
+    "monthlySpend": 1429,
+    "travelProfile": "nunca",
+    "rewardPreference": "milhas",
+    "annualFeeTolerance": "baixa",
+    "creditProfile": "baixo",
+    "mainSpendCategory": "online",
+    "cards": []
+  },
+  {
+    "id": 21,
+    "name": "Bruno Prado",
+    "age": 44,
+    "income": 2939,
+    "monthlySpend": 1796,
+    "travelProfile": "muito",
+    "rewardPreference": "pontos",
+    "annualFeeTolerance": "baixa",
+    "creditProfile": "baixo",
+    "mainSpendCategory": "viagem",
+    "cards": [
+      {
+        "id": 4,
+        "name": "Pulse Infinite"
+      },
+      {
+        "id": 20,
+        "name": "Orbit Basic"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Carlos Ribeiro",
+    "age": 25,
+    "income": 5505,
+    "monthlySpend": 2122,
+    "travelProfile": "nunca",
+    "rewardPreference": "cashback",
+    "annualFeeTolerance": "media",
+    "creditProfile": "medio",
+    "mainSpendCategory": "dia_a_dia",
+    "cards": [
+      {
+        "id": 25,
+        "name": "Nexa Cash"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "João Pereira",
+    "age": 55,
+    "income": 3061,
+    "monthlySpend": 1974,
+    "travelProfile": "nunca",
+    "rewardPreference": "pontos",
+    "annualFeeTolerance": "baixa",
+    "creditProfile": "baixo",
+    "mainSpendCategory": "online",
+    "cards": [
+      {
+        "id": 36,
+        "name": "Aurora Pro"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "name": "João Lima",
+    "age": 57,
+    "income": 15523,
+    "monthlySpend": 6888,
+    "travelProfile": "nunca",
+    "rewardPreference": "pontos",
+    "annualFeeTolerance": "alta",
+    "creditProfile": "alto",
+    "mainSpendCategory": "dia_a_dia",
+    "cards": []
+  },
+  {
+    "id": 25,
+    "name": "Fernanda Almeida",
+    "age": 35,
+    "income": 17052,
+    "monthlySpend": 5978,
+    "travelProfile": "as_vezes",
+    "rewardPreference": "pontos",
+    "annualFeeTolerance": "alta",
+    "creditProfile": "alto",
+    "mainSpendCategory": "dia_a_dia",
+    "cards": [
+      {
+        "id": 42,
+        "name": "Cosmic Gold"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Lucas Tavares",
+    "age": 53,
+    "income": 16601,
+    "monthlySpend": 5865,
+    "travelProfile": "as_vezes",
+    "rewardPreference": "pontos",
+    "annualFeeTolerance": "alta",
+    "creditProfile": "alto",
+    "mainSpendCategory": "mercado",
+    "cards": [
+      {
+        "id": 16,
+        "name": "Cosmic Plus"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Ana Tavares",
+    "age": 54,
+    "income": 11562,
+    "monthlySpend": 7832,
+    "travelProfile": "muito",
+    "rewardPreference": "pontos",
+    "annualFeeTolerance": "alta",
+    "creditProfile": "alto",
+    "mainSpendCategory": "mercado",
+    "cards": []
+  },
+  {
+    "id": 28,
+    "name": "Felipe Ribeiro",
+    "age": 21,
+    "income": 15278,
+    "monthlySpend": 5327,
+    "travelProfile": "as_vezes",
     "rewardPreference": "milhas",
     "annualFeeTolerance": "alta",
     "creditProfile": "alto",
     "mainSpendCategory": "viagem",
     "cards": [
       {
-        "id": 12,
-        "name": "Orbit Black"
+        "id": 40,
+        "name": "Titan Gold"
+      },
+      {
+        "id": 24,
+        "name": "Eclipse Rewards"
       }
     ]
   },
   {
-    "id": 13,
-    "name": "Mariana Duarte",
-    "age": 23,
-    "income": 2100,
-    "monthlySpend": 1500,
+    "id": 29,
+    "name": "Igor Oliveira",
+    "age": 53,
+    "income": 8849,
+    "monthlySpend": 4910,
+    "travelProfile": "as_vezes",
+    "rewardPreference": "pontos",
+    "annualFeeTolerance": "media",
+    "creditProfile": "medio",
+    "mainSpendCategory": "mercado",
+    "cards": []
+  },
+  {
+    "id": 30,
+    "name": "Julia Costa",
+    "age": 44,
+    "income": 6672,
+    "monthlySpend": 4425,
+    "travelProfile": "nunca",
+    "rewardPreference": "pontos",
+    "annualFeeTolerance": "media",
+    "creditProfile": "medio",
+    "mainSpendCategory": "dia_a_dia",
+    "cards": []
+  },
+  {
+    "id": 31,
+    "name": "Daniela Lima",
+    "age": 48,
+    "income": 2666,
+    "monthlySpend": 1149,
     "travelProfile": "nunca",
     "rewardPreference": "cashback",
     "annualFeeTolerance": "baixa",
@@ -260,156 +528,375 @@
     "mainSpendCategory": "dia_a_dia",
     "cards": [
       {
-        "id": 16,
-        "name": "Vector Cash"
+        "id": 45,
+        "name": "Aurora Edge"
       }
     ]
   },
   {
-    "id": 14,
-    "name": "Nicolas Barros",
-    "age": 36,
-    "income": 13500,
-    "monthlySpend": 8000,
-    "travelProfile": "muito",
-    "rewardPreference": "milhas",
-    "annualFeeTolerance": "alta",
-    "creditProfile": "alto",
-    "mainSpendCategory": "viagem",
-    "cards": [
-      {
-        "id": 30,
-        "name": "Zen Infinite"
-      }
-    ]
-  },
-  {
-    "id": 15,
-    "name": "Olivia Tavares",
-    "age": 27,
-    "income": 5000,
-    "monthlySpend": 3200,
-    "travelProfile": "as_vezes",
-    "rewardPreference": "pontos",
-    "annualFeeTolerance": "media",
-    "creditProfile": "medio",
-    "mainSpendCategory": "online",
-    "cards": [
-      {
-        "id": 29,
-        "name": "Zen Points"
-      }
-    ]
-  },
-  {
-    "id": 16,
-    "name": "Paulo Mendes",
-    "age": 40,
-    "income": 17000,
-    "monthlySpend": 9500,
-    "travelProfile": "muito",
-    "rewardPreference": "milhas",
-    "annualFeeTolerance": "alta",
-    "creditProfile": "alto",
-    "mainSpendCategory": "viagem",
-    "cards": [
-      {
-        "id": 23,
-        "name": "Titan Black"
-      },
-      {
-        "id": 24,
-        "name": "Titan Cashback+"
-      }
-    ]
-  },
-  {
-    "id": 17,
-    "name": "Renata Silva",
-    "age": 32,
-    "income": 7200,
-    "monthlySpend": 3900,
-    "travelProfile": "as_vezes",
-    "rewardPreference": "cashback",
-    "annualFeeTolerance": "media",
-    "creditProfile": "medio",
-    "mainSpendCategory": "dia_a_dia",
-    "cards": [
-      {
-        "id": 17,
-        "name": "Vector Gold"
-      }
-    ]
-  },
-  {
-    "id": 18,
-    "name": "Sérgio Andrade",
-    "age": 45,
-    "income": 14000,
-    "monthlySpend": 7800,
-    "travelProfile": "muito",
-    "rewardPreference": "pontos",
-    "annualFeeTolerance": "alta",
-    "creditProfile": "alto",
-    "mainSpendCategory": "online",
-    "cards": [
-      {
-        "id": 18,
-        "name": "Vector Platinum"
-      }
-    ]
-  },
-  {
-    "id": 19,
-    "name": "Tatiane Moura",
-    "age": 29,
-    "income": 3900,
-    "monthlySpend": 2500,
+    "id": 32,
+    "name": "Victor Lima",
+    "age": 56,
+    "income": 4344,
+    "monthlySpend": 2775,
     "travelProfile": "nunca",
     "rewardPreference": "cashback",
     "annualFeeTolerance": "baixa",
     "creditProfile": "medio",
-    "mainSpendCategory": "mercado",
+    "mainSpendCategory": "online",
     "cards": [
       {
-        "id": 3,
-        "name": "Atlas Cash"
+        "id": 4,
+        "name": "Pulse Infinite"
       }
     ]
   },
   {
-    "id": 20,
-    "name": "Victor Prado",
-    "age": 38,
-    "income": 10000,
-    "monthlySpend": 6100,
-    "travelProfile": "as_vezes",
-    "rewardPreference": "milhas",
-    "annualFeeTolerance": "media",
+    "id": 33,
+    "name": "Gabriela Rocha",
+    "age": 48,
+    "income": 19463,
+    "monthlySpend": 11512,
+    "travelProfile": "nunca",
+    "rewardPreference": "pontos",
+    "annualFeeTolerance": "alta",
     "creditProfile": "alto",
-    "mainSpendCategory": "viagem",
-    "cards": [
-      {
-        "id": 11,
-        "name": "Orbit Travel"
-      },
-      {
-        "id": 27,
-        "name": "Nova Travel"
-      }
-    ]
+    "mainSpendCategory": "dia_a_dia",
+    "cards": []
   },
   {
-    "id": 21,
-    "name": "Usuário Novo",
-    "age": 30,
-    "income": 4500,
-    "monthlySpend": 2500,
+    "id": 34,
+    "name": "Fernanda Freitas",
+    "age": 31,
+    "income": 13473,
+    "monthlySpend": 4162,
+    "travelProfile": "as_vezes",
+    "rewardPreference": "pontos",
+    "annualFeeTolerance": "alta",
+    "creditProfile": "alto",
+    "mainSpendCategory": "online",
+    "cards": []
+  },
+  {
+    "id": 35,
+    "name": "Nicolas Martins",
+    "age": 36,
+    "income": 9503,
+    "monthlySpend": 3538,
     "travelProfile": "as_vezes",
     "rewardPreference": "cashback",
     "annualFeeTolerance": "media",
     "creditProfile": "medio",
+    "mainSpendCategory": "mercado",
+    "cards": [
+      {
+        "id": 29,
+        "name": "Orbit Platinum"
+      },
+      {
+        "id": 50,
+        "name": "Vortex Ultra"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "name": "João Carvalho",
+    "age": 41,
+    "income": 14313,
+    "monthlySpend": 9041,
+    "travelProfile": "as_vezes",
+    "rewardPreference": "pontos",
+    "annualFeeTolerance": "alta",
+    "creditProfile": "alto",
+    "mainSpendCategory": "dia_a_dia",
+    "cards": [
+      {
+        "id": 43,
+        "name": "Infinity Platinum"
+      },
+      {
+        "id": 20,
+        "name": "Orbit Basic"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Mariana Rocha",
+    "age": 54,
+    "income": 12561,
+    "monthlySpend": 5274,
+    "travelProfile": "muito",
+    "rewardPreference": "pontos",
+    "annualFeeTolerance": "alta",
+    "creditProfile": "alto",
+    "mainSpendCategory": "viagem",
+    "cards": [
+      {
+        "id": 27,
+        "name": "Eclipse Gold"
+      },
+      {
+        "id": 14,
+        "name": "Stellar Platinum"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Mariana Moura",
+    "age": 21,
+    "income": 3939,
+    "monthlySpend": 1720,
+    "travelProfile": "muito",
+    "rewardPreference": "pontos",
+    "annualFeeTolerance": "baixa",
+    "creditProfile": "baixo",
+    "mainSpendCategory": "viagem",
+    "cards": [
+      {
+        "id": 4,
+        "name": "Pulse Infinite"
+      },
+      {
+        "id": 28,
+        "name": "Atlas Premium"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Renata Souza",
+    "age": 58,
+    "income": 8012,
+    "monthlySpend": 3760,
+    "travelProfile": "nunca",
+    "rewardPreference": "pontos",
+    "annualFeeTolerance": "media",
+    "creditProfile": "medio",
+    "mainSpendCategory": "dia_a_dia",
+    "cards": [
+      {
+        "id": 28,
+        "name": "Atlas Premium"
+      },
+      {
+        "id": 37,
+        "name": "Quantum Cash"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Daniela Mendes",
+    "age": 24,
+    "income": 12920,
+    "monthlySpend": 3904,
+    "travelProfile": "as_vezes",
+    "rewardPreference": "milhas",
+    "annualFeeTolerance": "alta",
+    "creditProfile": "alto",
+    "mainSpendCategory": "viagem",
+    "cards": [
+      {
+        "id": 34,
+        "name": "Vortex Rewards"
+      },
+      {
+        "id": 10,
+        "name": "Phoenix Fácil"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Diego Almeida",
+    "age": 34,
+    "income": 5521,
+    "monthlySpend": 2758,
+    "travelProfile": "nunca",
+    "rewardPreference": "pontos",
+    "annualFeeTolerance": "media",
+    "creditProfile": "medio",
+    "mainSpendCategory": "viagem",
+    "cards": [
+      {
+        "id": 4,
+        "name": "Pulse Infinite"
+      },
+      {
+        "id": 24,
+        "name": "Eclipse Rewards"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Renata Gomes",
+    "age": 31,
+    "income": 9540,
+    "monthlySpend": 3806,
+    "travelProfile": "as_vezes",
+    "rewardPreference": "milhas",
+    "annualFeeTolerance": "media",
+    "creditProfile": "medio",
+    "mainSpendCategory": "mercado",
+    "cards": [
+      {
+        "id": 24,
+        "name": "Eclipse Rewards"
+      },
+      {
+        "id": 22,
+        "name": "Titan Black"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "name": "João Oliveira",
+    "age": 20,
+    "income": 16367,
+    "monthlySpend": 7614,
+    "travelProfile": "as_vezes",
+    "rewardPreference": "pontos",
+    "annualFeeTolerance": "alta",
+    "creditProfile": "alto",
+    "mainSpendCategory": "mercado",
+    "cards": [
+      {
+        "id": 50,
+        "name": "Vortex Ultra"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Daniela Souza",
+    "age": 25,
+    "income": 7164,
+    "monthlySpend": 2556,
+    "travelProfile": "muito",
+    "rewardPreference": "pontos",
+    "annualFeeTolerance": "media",
+    "creditProfile": "medio",
+    "mainSpendCategory": "online",
+    "cards": []
+  },
+  {
+    "id": 45,
+    "name": "Eduarda Andrade",
+    "age": 55,
+    "income": 13818,
+    "monthlySpend": 8826,
+    "travelProfile": "nunca",
+    "rewardPreference": "milhas",
+    "annualFeeTolerance": "alta",
+    "creditProfile": "alto",
+    "mainSpendCategory": "dia_a_dia",
+    "cards": [
+      {
+        "id": 37,
+        "name": "Quantum Cash"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Diego Pedro",
+    "age": 37,
+    "income": 12469,
+    "monthlySpend": 5843,
+    "travelProfile": "nunca",
+    "rewardPreference": "pontos",
+    "annualFeeTolerance": "alta",
+    "creditProfile": "alto",
     "mainSpendCategory": "dia_a_dia",
     "cards": []
+  },
+  {
+    "id": 47,
+    "name": "Helena Ferreira",
+    "age": 54,
+    "income": 17114,
+    "monthlySpend": 11088,
+    "travelProfile": "nunca",
+    "rewardPreference": "pontos",
+    "annualFeeTolerance": "alta",
+    "creditProfile": "alto",
+    "mainSpendCategory": "dia_a_dia",
+    "cards": [
+      {
+        "id": 28,
+        "name": "Atlas Premium"
+      },
+      {
+        "id": 11,
+        "name": "Nexa Gold"
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Ana Tavares",
+    "age": 26,
+    "income": 18154,
+    "monthlySpend": 11504,
+    "travelProfile": "muito",
+    "rewardPreference": "milhas",
+    "annualFeeTolerance": "alta",
+    "creditProfile": "alto",
+    "mainSpendCategory": "viagem",
+    "cards": [
+      {
+        "id": 9,
+        "name": "Infinity Plus"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Camila Martins",
+    "age": 20,
+    "income": 12126,
+    "monthlySpend": 5595,
+    "travelProfile": "nunca",
+    "rewardPreference": "pontos",
+    "annualFeeTolerance": "alta",
+    "creditProfile": "alto",
+    "mainSpendCategory": "viagem",
+    "cards": [
+      {
+        "id": 24,
+        "name": "Eclipse Rewards"
+      },
+      {
+        "id": 33,
+        "name": "Elite Infinite"
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Bruno Gomes",
+    "age": 52,
+    "income": 11083,
+    "monthlySpend": 3877,
+    "travelProfile": "muito",
+    "rewardPreference": "cashback",
+    "annualFeeTolerance": "alta",
+    "creditProfile": "alto",
+    "mainSpendCategory": "online",
+    "cards": [
+      {
+        "id": 40,
+        "name": "Titan Gold"
+      },
+      {
+        "id": 33,
+        "name": "Elite Infinite"
+      }
+    ]
   }
 ]

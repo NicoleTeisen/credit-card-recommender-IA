@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  chromadb:
+    image: chromadb/chroma:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma-data:/chroma/chroma
+    environment:
+      - IS_PERSISTENT=TRUE
+      - ANONYMIZED_TELEMETRY=FALSE
+      - ALLOW_RESET=TRUE
+      - CHROMA_SERVER_CORS_ALLOW_ORIGINS='["*"]'
+      - CHROMA_SERVER_CORS_ALLOW_CREDENTIALS=TRUE
+      - CHROMA_SERVER_CORS_ALLOW_METHODS='*'
+      - CHROMA_SERVER_CORS_ALLOW_HEADERS='*'
+    restart: unless-stopped
+
+volumes:
+  chroma-data:
+    driver: local

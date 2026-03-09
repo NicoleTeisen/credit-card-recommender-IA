@@ -8,6 +8,7 @@ export const events = {
   modelProgressUpdate: 'model:progress-update',
   recommendationsReady: 'recommendations:ready',
   recommend: 'recommend',
+  embeddingsReady: 'embeddings:ready',
 };
 
 export const workerEvents = {
@@ -18,4 +19,5 @@ export const workerEvents = {
   recommend: 'recommend',
   trainingLog: 'training:log',
   progressUpdate: 'progress:update',
+  embeddingsExtracted: 'embeddings:extracted',
 };

@@ -50,6 +50,14 @@ export class WorkerController {
         });
       }
 
+      if (data.type === workerEvents.embeddingsExtracted) {
+        console.log('[WorkerController] 📤 Dispatching embeddingsReady event');
+        this.#events.dispatchEmbeddingsReady({
+          userEmbeddings: data.userEmbeddings,
+          cardEmbeddings: data.cardEmbeddings,
+        });
+      }
+
       if (data.type === workerEvents.trainingError) {
         this.#events.dispatchModelProgressUpdate({
           type: 'error',
